@@ -8,16 +8,22 @@ public class GenericList <E> implements Iterable<E> {
         this.elements[count++] = element;
     }
 
-    public E getElement(int index) {
-        return this.elements[index];
-    }
-
-    public int getCount() {
-        return count;
-    }
-
     @Override
     public Iterator<E> iterator() {
-        return null;
+        return new ListIterator();
+    }
+
+    private class ListIterator implements Iterator<E> {
+        private int index;
+
+        @Override
+        public boolean hasNext() {
+            return index < count;
+        }
+
+        @Override
+        public E next() {
+            return elements[index++];
+        }
     }
 }
