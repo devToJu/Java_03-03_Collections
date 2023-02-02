@@ -9,4 +9,8 @@ public class GenericList <E> {
     public E getElement(int index) {
         return this.elements[index];
     }
+
+    public int getCount() {
+        return count;
+    }
 }

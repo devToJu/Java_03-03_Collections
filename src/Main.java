@@ -4,5 +4,9 @@ public class Main {
         list.add("a");
         list.add("b");
         list.add("c");
+
+        for (int i = 0; i < list.getCount(); i++) {
+            System.out.println(list.getElement(i));
+        }
     }
 }
