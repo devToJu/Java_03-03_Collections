@@ -1,4 +1,6 @@
-public class GenericList <E> {
+import java.util.Iterator;
+
+public class GenericList <E> implements Iterable<E> {
     private final E[] elements = (E[]) new Object[10];
     private int count;
 
@@ -12,5 +14,10 @@ public class GenericList <E> {
 
     public int getCount() {
         return count;
+    }
+
+    @Override
+    public Iterator<E> iterator() {
+        return null;
     }
 }

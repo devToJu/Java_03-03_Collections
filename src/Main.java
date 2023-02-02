@@ -5,8 +5,11 @@ public class Main {
         list.add("b");
         list.add("c");
 
-        for (int i = 0; i < list.getCount(); i++) {
-            System.out.println(list.getElement(i));
+        // Will throw NullPointerException because of missing implementation of the iterator()-Method
+        var iterator = list.iterator();
+        while(iterator.hasNext()) {
+            var item = iterator.next();
+            System.out.println(item);
         }
     }
 }
