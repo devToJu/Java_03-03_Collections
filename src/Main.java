@@ -5,11 +5,7 @@ public class Main {
         list.add("b");
         list.add("c");
 
-        // Will throw NullPointerException because of missing implementation of the iterator()-Method
-        var iterator = list.iterator();
-        while(iterator.hasNext()) {
-            var item = iterator.next();
+        for (var item : list)
             System.out.println(item);
-        }
     }
 }
