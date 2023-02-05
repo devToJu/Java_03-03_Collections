@@ -6,7 +6,12 @@ public class Main {
     public static void main(String[] args) {
         Collection<String> collection = new ArrayList<>();
         Collections.addAll(collection, "A", "B", "C");
-        collection.clear();
+
+        var hasElements = !collection.isEmpty();
+        System.out.println("Collection has elements: " + hasElements);
+
+        var containsLetter = collection.contains("B");
+        System.out.println("Collection contains letter 'B': " + containsLetter);
 
         displayAllItems(collection);
     }
@@ -19,6 +24,14 @@ public class Main {
 
         // Using the overwritten toString()-Method
         System.out.println(collection);
+    }
+
+    private static void removeAllItems() {
+        Collection<String> collection = new ArrayList<>();
+        Collections.addAll(collection, "A", "B", "C");
+        collection.clear();
+
+        displayAllItems(collection);
     }
 
     private static void removeOneItem() {
