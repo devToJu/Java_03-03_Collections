@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         Collection<String> collection = new ArrayList<>();
         Collections.addAll(collection, "A", "B", "C");
-        System.out.println("Count of elements in the collection: " + collection.size());
+        collection.remove("A");
 
         displayAllItems(collection);
     }
@@ -19,6 +19,12 @@ public class Main {
 
         // Using the overwritten toString()-Method
         System.out.println(collection);
+    }
+
+    private static void getNumberOfItems() {
+        Collection<String> collection = new ArrayList<>();
+        Collections.addAll(collection, "A", "B", "C");
+        System.out.println("Count of elements in the collection: " + collection.size());
     }
 
     private static void addMultipleItemsInOneStep() {
