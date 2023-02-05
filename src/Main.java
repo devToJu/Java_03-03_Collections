@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
         Collection<String> collection = new ArrayList<>();
-        collection.add("A");
-        collection.add("B");
-        collection.add("C");
+        Collections.addAll(collection, "A", "B", "C");
 
         displayAllItems(collection);
     }
@@ -19,5 +18,14 @@ public class Main {
 
         // Using the overwritten toString()-Method
         System.out.println(collection);
+    }
+
+    private static void addItemsSeparately() {
+        Collection<String> collection = new ArrayList<>();
+        collection.add("A");
+        collection.add("B");
+        collection.add("C");
+
+        displayAllItems(collection);
     }
 }
