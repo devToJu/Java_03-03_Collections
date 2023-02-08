@@ -5,13 +5,14 @@ import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
-        Collection<String> collection = new ArrayList<>();
-        Collections.addAll(collection, "A", "B", "C");
-
-        Collection<String> other = new ArrayList<>(collection);
-
-        System.out.println("Collections have the same referenz: " + (collection == other));
-        System.out.println("Collections have the same content: " + (collection.equals(other)));
+        addItemsSeparately();
+        addMultipleItemsInOneStep();
+        getNumberOfItems();
+        removeOneItem();
+        removeAllItems();
+        checkingACollection();
+        convertCollectionToArray();
+        compareTwoCollections();
     }
 
     private static <T> void displayAllItems(Collection<T> collection) {
@@ -22,6 +23,17 @@ public class Main {
 
         // Using the overwritten toString()-Method
         System.out.println(collection);
+        System.out.println();
+    }
+
+    private static void compareTwoCollections() {
+        Collection<String> collection = new ArrayList<>();
+        Collections.addAll(collection, "A", "B", "C");
+
+        Collection<String> other = new ArrayList<>(collection);
+
+        System.out.println("Collections have the same referenz: " + (collection == other));
+        System.out.println("Collections have the same content: " + (collection.equals(other)));
     }
 
     private static void convertCollectionToArray() {
@@ -33,6 +45,7 @@ public class Main {
 
         var stringArray = collection.toArray(new String[0]);
         System.out.println("Number of items: " + stringArray.length + " | Items = " + Arrays.toString(stringArray));
+        System.out.println();
     }
 
     private static void checkingACollection() {
@@ -44,6 +57,7 @@ public class Main {
 
         var containsLetter = collection.contains("B");
         System.out.println("Collection contains letter 'B': " + containsLetter);
+        System.out.println();
     }
 
     private static void removeAllItems() {
@@ -66,6 +80,7 @@ public class Main {
         Collection<String> collection = new ArrayList<>();
         Collections.addAll(collection, "A", "B", "C");
         System.out.println("Count of elements in the collection: " + collection.size());
+        System.out.println();
     }
 
     private static void addMultipleItemsInOneStep() {
