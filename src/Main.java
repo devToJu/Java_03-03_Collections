@@ -24,6 +24,13 @@ public class Main {
         removeElementAt(2);
         printList();
 
+        workingWithIndexOf();
+
+        var listWithFirstAndSecondElement = list.subList(0, 2);
+        System.out.println("Sublist: " + listWithFirstAndSecondElement);
+    }
+
+    private static void workingWithIndexOf() {
         list.addAll(Arrays.asList("c", "a"));
         System.out.println(list);
 
@@ -35,6 +42,7 @@ public class Main {
 
         var indexOfElementNotInList = list.lastIndexOf("x");
         System.out.println("index element not in list: " + indexOfElementNotInList);
+        System.out.println();
     }
 
     private static void removeElementAt(int index) {
