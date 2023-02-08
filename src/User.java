@@ -9,4 +9,9 @@ public class User implements Comparable<User> {
     public int compareTo(User other) {
         return this.name.compareTo(other.name);
     }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }

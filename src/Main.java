@@ -10,6 +10,8 @@ public class Main {
         users.add(new User("Hans"));
         users.add(new User("Jenna"));
 
+        System.out.println(users);
         Collections.sort(users);
+        System.out.println(users);
     }
 }
