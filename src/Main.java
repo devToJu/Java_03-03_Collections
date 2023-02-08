@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -22,6 +23,18 @@ public class Main {
 
         removeElementAt(2);
         printList();
+
+        list.addAll(Arrays.asList("c", "a"));
+        System.out.println(list);
+
+        var indexOfFirstA = list.indexOf("a");
+        System.out.println("First index with 'a': " + indexOfFirstA);
+
+        var indexOfLastA = list.lastIndexOf("a");
+        System.out.println("Last index with 'a': " + indexOfLastA);
+
+        var indexOfElementNotInList = list.lastIndexOf("x");
+        System.out.println("index element not in list: " + indexOfElementNotInList);
     }
 
     private static void removeElementAt(int index) {
