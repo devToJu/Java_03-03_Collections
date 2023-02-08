@@ -12,14 +12,20 @@ public class Main {
 
     public static void main(String[] args) {
         printList();
+
         addElementAt(0);
         printList();
+
         getElementAt(1);
         changeElementAt(2);
         printList();
 
-        list.remove(2);
+        removeElementAt(2);
         printList();
+    }
+
+    private static void removeElementAt(int index) {
+        list.remove(index);
     }
 
     private static void changeElementAt(int index) {
@@ -33,6 +39,7 @@ public class Main {
 
     private static void printList() {
         System.out.println(list);
+        System.out.println();
     }
 
     private static void addElementAt(int index) {
