@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
@@ -7,13 +8,11 @@ public class Main {
         Collection<String> collection = new ArrayList<>();
         Collections.addAll(collection, "A", "B", "C");
 
-        var hasElements = !collection.isEmpty();
-        System.out.println("Collection has elements: " + hasElements);
+        var objectArray = collection.toArray();
+        System.out.println("Number of items: " + objectArray.length + " | Items = " + Arrays.toString(objectArray));
 
-        var containsLetter = collection.contains("B");
-        System.out.println("Collection contains letter 'B': " + containsLetter);
-
-        displayAllItems(collection);
+        var stringArray = collection.toArray(new String[0]);
+        System.out.println("Number of items: " + stringArray.length + " | Items = " + Arrays.toString(stringArray));
     }
 
     private static <T> void displayAllItems(Collection<T> collection) {
@@ -24,6 +23,17 @@ public class Main {
 
         // Using the overwritten toString()-Method
         System.out.println(collection);
+    }
+
+    private static void checkingACollection() {
+        Collection<String> collection = new ArrayList<>();
+        Collections.addAll(collection, "A", "B", "C");
+
+        var hasElements = !collection.isEmpty();
+        System.out.println("Collection has elements: " + hasElements);
+
+        var containsLetter = collection.contains("B");
+        System.out.println("Collection contains letter 'B': " + containsLetter);
     }
 
     private static void removeAllItems() {
