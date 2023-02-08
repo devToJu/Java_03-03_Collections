@@ -25,7 +25,10 @@ public class Main {
         printList();
 
         workingWithIndexOf();
+        workingWithSublist();
+    }
 
+    private static void workingWithSublist() {
         var listWithFirstAndSecondElement = list.subList(0, 2);
         System.out.println("Sublist: " + listWithFirstAndSecondElement);
     }
