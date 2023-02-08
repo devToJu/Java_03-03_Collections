@@ -10,7 +10,6 @@ public class Main {
         users.add(new User("Hans"));
         users.add(new User("Jenna"));
 
-        // Compilation error: user doesn't implement the comparable interface
-        // Collections.sort(users);
+        Collections.sort(users);
     }
 }
