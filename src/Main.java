@@ -8,11 +8,10 @@ public class Main {
         Collection<String> collection = new ArrayList<>();
         Collections.addAll(collection, "A", "B", "C");
 
-        var objectArray = collection.toArray();
-        System.out.println("Number of items: " + objectArray.length + " | Items = " + Arrays.toString(objectArray));
+        Collection<String> other = new ArrayList<>(collection);
 
-        var stringArray = collection.toArray(new String[0]);
-        System.out.println("Number of items: " + stringArray.length + " | Items = " + Arrays.toString(stringArray));
+        System.out.println("Collections have the same referenz: " + (collection == other));
+        System.out.println("Collections have the same content: " + (collection.equals(other)));
     }
 
     private static <T> void displayAllItems(Collection<T> collection) {
@@ -23,6 +22,17 @@ public class Main {
 
         // Using the overwritten toString()-Method
         System.out.println(collection);
+    }
+
+    private static void convertCollectionToArray() {
+        Collection<String> collection = new ArrayList<>();
+        Collections.addAll(collection, "A", "B", "C");
+
+        var objectArray = collection.toArray();
+        System.out.println("Number of items: " + objectArray.length + " | Items = " + Arrays.toString(objectArray));
+
+        var stringArray = collection.toArray(new String[0]);
+        System.out.println("Number of items: " + stringArray.length + " | Items = " + Arrays.toString(stringArray));
     }
 
     private static void checkingACollection() {
