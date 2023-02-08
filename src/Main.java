@@ -15,9 +15,15 @@ public class Main {
         addElementAt(0);
         printList();
         getElementAt(1);
-
-        list.set(2, "c++");
+        changeElementAt(2);
         printList();
+
+        list.remove(2);
+        printList();
+    }
+
+    private static void changeElementAt(int index) {
+        list.set(index, "c++");
     }
 
     private static void getElementAt(int index) {
