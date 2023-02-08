@@ -14,8 +14,15 @@ public class Main {
         printList();
         addElementAt(0);
         printList();
+        getElementAt(1);
 
-        System.out.println("Element at Index 1 is " + list.get(1));
+        list.set(2, "c++");
+        printList();
+    }
+
+    private static void getElementAt(int index) {
+        var element = list.get(index);
+        System.out.println("Element at Index " + index + " is " + element);
     }
 
     private static void printList() {
