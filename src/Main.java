@@ -6,5 +6,9 @@ public class Main {
     public static void main(String[] args) {
         Queue<String> queue = new ArrayDeque<>(Arrays.asList("x", "c", "d"));
         System.out.println(queue);
+
+        queue.add("rear");
+        queue.offer("another rear");
+        System.out.println(queue);
     }
 }
