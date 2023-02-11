@@ -10,11 +10,15 @@ public class Main {
         users.add(new User("Hans", "e4"));
         users.add(new User("Jenna", "e3"));
 
-        System.out.println(users);
-        Collections.sort(users);
+        System.out.printf("%17s", "unsorted: ");
         System.out.println(users);
 
-        Collections.sort(users, new EmailComparator());
+        Collections.sort(users);
+        System.out.printf("%17s", "sorted by name: ");
+        System.out.println(users);
+
+        users.sort(new EmailComparator());
+        System.out.printf("%17s", "sorted by email: ");
         System.out.println(users);
     }
 }
