@@ -36,9 +36,7 @@ public class Main {
     }
 
     private static void getUserOrDefault() {
-        var defaultUser = new User("default user", "default email");
-        var user = map.getOrDefault("e99", defaultUser);
-
+        var user = map.getOrDefault("e99", User.DEFAULT_USER);
         System.out.println(user);
     }
 }

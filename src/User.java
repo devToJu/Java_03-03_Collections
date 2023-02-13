@@ -3,6 +3,8 @@ public class User implements Comparable<User> {
 
     private final String email;
 
+    public static final User DEFAULT_USER = new User("default user", "default email");
+
     public User(String name, String email) {
         this.name = name;
         this.email = email;
