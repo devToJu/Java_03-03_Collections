@@ -9,9 +9,16 @@ public class Main {
         System.out.println(map);
         storeUser();
 
+        System.out.println();
+
         getUser();
         getUserNotExist();
         getUserOrDefault();
+
+        System.out.println();
+
+        mapContainsUser();
+
     }
 
     private static void storeUser() {
@@ -38,5 +45,17 @@ public class Main {
     private static void getUserOrDefault() {
         var user = map.getOrDefault("e99", User.DEFAULT_USER);
         System.out.println(user);
+    }
+
+    private static void mapContainsUser() {
+        System.out.println(map);
+
+        if (map.containsKey("e3")) {
+            System.out.println("user existiert bereits");
+            return;
+        }
+
+        map.put("e3", new User("Mary", "e3"));
+        System.out.println(map);
     }
 }
