@@ -20,6 +20,8 @@ public class Main {
 
         intersectionTwoSets();
         resetSetA();
+
+        differenceTwoSets();
     }
 
     private static void addItems() {
@@ -39,7 +41,7 @@ public class Main {
     }
 
     private static void unionTwoSets() {
-        System.out.println("\n---- UNION: use all elements ----");
+        System.out.println("\n---- UNION: get all elements as unique ----");
         System.out.println("SetA: " + setA);
         System.out.println("SetB: " + setB);
 
@@ -52,11 +54,20 @@ public class Main {
     }
 
     private static void intersectionTwoSets() {
-        System.out.println("\n---- INTERSECTION: use elements common in both sets ----");
+        System.out.println("\n---- INTERSECTION: get elements common in both sets ----");
         System.out.println("SetA: " + setA);
         System.out.println("SetB: " + setB);
 
         setA.retainAll(setB);
         System.out.println("Intersection: " + setA);
+    }
+
+    private static void differenceTwoSets() {
+        System.out.println("\n---- DIFFERENCE: get only the unique elements of first set ----");
+        System.out.println("SetA: " + setA);
+        System.out.println("SetB: " + setB);
+
+        setA.removeAll(setB);
+        System.out.println("Difference: " + setA);
     }
 }
