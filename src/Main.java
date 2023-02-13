@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,7 +9,7 @@ public class Main {
         System.out.println(unsortedUniqueCollection);
 
         addItems();
-        System.out.println(unsortedUniqueCollection);
+        removeDuplicateFromList();
     }
 
     private static void addItems() {
@@ -15,5 +17,14 @@ public class Main {
         unsortedUniqueCollection.add("is");
         unsortedUniqueCollection.add("blue");
         unsortedUniqueCollection.add("blue");
+
+        System.out.println(unsortedUniqueCollection);
+    }
+
+    private static void removeDuplicateFromList() {
+        var list = new ArrayList<>(Arrays.asList("a", "b", "b", "c", "d", "d"));
+        unsortedUniqueCollection.addAll(list);
+
+        System.out.println(unsortedUniqueCollection);
     }
 }
