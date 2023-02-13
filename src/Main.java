@@ -24,6 +24,7 @@ public class Main {
         System.out.println("\n---- iterate through map with ----");
         iterateThroughMapWithKeySet();
         iterateThroughMapWithEntrySet();
+        iterateThroughMapWithValues();
     }
 
     private static void storeUsers() {
@@ -92,6 +93,16 @@ public class Main {
             System.out.println("entry: " + entry
                     + " | key = " + entry.getKey()
                     + " | value = " + entry.getValue());
+        }
+
+        System.out.println("-------------------------------------");
+    }
+
+    private static void iterateThroughMapWithValues() {
+        System.out.println("...values():");
+
+        for (var user : map.values()) {
+            System.out.println("user: " + user);
         }
 
         System.out.println("-------------------------------------");
