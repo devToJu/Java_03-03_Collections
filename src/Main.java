@@ -17,6 +17,9 @@ public class Main {
 
         unionTwoSets();
         resetSetA();
+
+        intersectionTwoSets();
+        resetSetA();
     }
 
     private static void addItems() {
@@ -46,5 +49,14 @@ public class Main {
 
     private static void resetSetA() {
         setA = new HashSet<>(Arrays.asList("a", "b", "c"));
+    }
+
+    private static void intersectionTwoSets() {
+        System.out.println("\n---- INTERSECTION: use elements common in both sets ----");
+        System.out.println("SetA: " + setA);
+        System.out.println("SetB: " + setB);
+
+        setA.retainAll(setB);
+        System.out.println("Intersection: " + setA);
     }
 }
