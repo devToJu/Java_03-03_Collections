@@ -4,17 +4,28 @@ import java.util.Queue;
 import java.util.concurrent.ArrayBlockingQueue;
 
 public class Main {
+    static Queue<String> queue = new ArrayDeque<>(Arrays.asList("x", "c", "d"));
     public static void main(String[] args) {
-        Queue<String> queue = new ArrayDeque<>(Arrays.asList("x", "c", "d"));
+        addItemsAtTheRear();
+        queueWithLimitedSize();
+
+        // Get front item of the queue
+        var frontItem = queue.peek();
+        System.out.println(frontItem);
+        System.out.println(queue);
+
+        frontItem = queue.element();
+        System.out.println(frontItem);
+        System.out.println(queue);
+    }
+
+    private static void addItemsAtTheRear() {
         System.out.println(queue);
 
         queue.add("rear");
         queue.offer("another rear");
         System.out.println(queue);
-
-        queueWithLimitedSize();
     }
-
     private static void queueWithLimitedSize() {
         Queue<String> queue = new ArrayBlockingQueue<>(2, true, Arrays.asList("a", "b"));
 
