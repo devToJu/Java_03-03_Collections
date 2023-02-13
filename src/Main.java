@@ -6,22 +6,23 @@ public class Main {
     static Map<String, User> map = new HashMap<>();
 
     public static void main(String[] args) {
+        System.out.println("---- store users ----");
         System.out.println(map);
-        storeUser();
+        storeUsers();
 
-        System.out.println();
-
+        System.out.println("\n---- get user ----");
         getUser();
         getUserNotExist();
         getUserOrDefault();
 
-        System.out.println();
-
+        System.out.println("\n---- map contains ----");
         mapContainsUser();
 
+        System.out.println("\n---- replace user ----");
+        replaceUser();
     }
 
-    private static void storeUser() {
+    private static void storeUsers() {
         var userA = new User("Tom", "e1");
         var userB = new User("Tina", "e2");
 
@@ -56,6 +57,17 @@ public class Main {
         }
 
         map.put("e3", new User("Mary", "e3"));
+        System.out.println(map);
+    }
+
+    private static void replaceUser() {
+        System.out.println(map);
+
+        if (map.containsKey("e3")) {
+            var newUser = new User("Marc", "e3");
+            System.out.println("replaced user: "+ map.replace("e3", newUser));
+        }
+
         System.out.println(map);
     }
 }
