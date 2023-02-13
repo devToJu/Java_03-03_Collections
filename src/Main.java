@@ -21,8 +21,9 @@ public class Main {
         System.out.println("\n---- replace user ----");
         replaceUser();
 
-        System.out.println("\n---- iterate through map ----");
+        System.out.println("\n---- iterate through map with ----");
         iterateThroughMapWithKeySet();
+        iterateThroughMapWithEntrySet();
     }
 
     private static void storeUsers() {
@@ -75,10 +76,22 @@ public class Main {
     }
 
     private static void iterateThroughMapWithKeySet() {
-        System.out.println("use keySet():");
+        System.out.println("...keySet():");
 
         for (var key : map.keySet()) {
             System.out.println("Key: " + key);
+        }
+
+        System.out.println("-------------------------------------");
+    }
+
+    private static void iterateThroughMapWithEntrySet() {
+        System.out.println("...entrySet():");
+
+        for (var entry : map.entrySet()) {
+            System.out.println("entry: " + entry
+                    + " | key = " + entry.getKey()
+                    + " | value = " + entry.getValue());
         }
 
         System.out.println("-------------------------------------");
