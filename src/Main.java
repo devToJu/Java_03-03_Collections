@@ -10,6 +10,7 @@ public class Main {
         storeUser();
 
         getUser();
+        getUserNotExist();
     }
 
     private static void storeUser() {
@@ -25,5 +26,11 @@ public class Main {
     private static void getUser() {
         var user = map.get("e2");
         System.out.println(user);
+    }
+
+    private static void getUserNotExist() {
+        var user = map.get("e99");
+        if (user == null)
+            System.out.println("User not in map");
     }
 }
