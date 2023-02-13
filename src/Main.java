@@ -6,6 +6,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 public class Main {
     static Queue<String> queue = new ArrayDeque<>(Arrays.asList("x", "c", "d"));
+    static Queue<String> emptyQueue = new ArrayDeque<>();
+
     public static void main(String[] args) {
         System.out.println("----- Add items at the rear -----");
         addItemsAtTheRear();
@@ -21,6 +23,9 @@ public class Main {
 
         System.out.println("\n----- Get front item and remove it from queue -----");
         getFrontItemAndRemoveIt();
+
+        System.out.println("\n----- Remove item from empty queue -----");
+        removeItemFromEmptyQueue();
     }
 
     private static void addItemsAtTheRear() {
@@ -54,7 +59,6 @@ public class Main {
         System.out.println(queue);
     }
     private static void getItemFromEmptyQueue() {
-        Queue<String> emptyQueue = new ArrayDeque<>();
         var item  = "TEST";
 
         item = emptyQueue.peek();
@@ -70,7 +74,6 @@ public class Main {
             System.out.println("Queue is empty => Item is " + item);
         }
     }
-
     private static void getFrontItemAndRemoveIt() {
         System.out.println(queue);
 
@@ -81,5 +84,16 @@ public class Main {
         item = queue.poll();
         System.out.println(item);
         System.out.println(queue);
+    }
+    private static void removeItemFromEmptyQueue() {
+        try {
+            emptyQueue.remove();
+        }
+        catch (NoSuchElementException ex) {
+            System.out.println("Queue is empty");
+        }
+
+        if (emptyQueue.poll() == null)
+            System.out.println("Queue is empty");
     }
 }
