@@ -8,6 +8,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(map);
         storeUser();
+
+        getUser();
     }
 
     private static void storeUser() {
@@ -18,5 +20,10 @@ public class Main {
         map.put(userB.getEmail(), userB);
 
         System.out.println(map);
+    }
+
+    private static void getUser() {
+        var user = map.get("e2");
+        System.out.println(user);
     }
 }
