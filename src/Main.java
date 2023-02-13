@@ -16,8 +16,11 @@ public class Main {
         System.out.println("\n----- Get front item -----");
         getFrontItem();
 
-        System.out.println("\n----- Get item from empty queue-----");
+        System.out.println("\n----- Get item from empty queue -----");
         getItemFromEmptyQueue();
+
+        System.out.println("\n----- Get front item and remove it from queue -----");
+        getFrontItemAndRemoveIt();
     }
 
     private static void addItemsAtTheRear() {
@@ -66,5 +69,17 @@ public class Main {
         catch (NoSuchElementException ex) {
             System.out.println("Queue is empty => Item is " + item);
         }
+    }
+
+    private static void getFrontItemAndRemoveIt() {
+        System.out.println(queue);
+
+        var item = queue.remove();
+        System.out.println(item);
+        System.out.println(queue);
+
+        item = queue.poll();
+        System.out.println(item);
+        System.out.println(queue);
     }
 }
