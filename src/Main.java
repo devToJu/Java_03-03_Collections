@@ -11,6 +11,7 @@ public class Main {
 
         getUser();
         getUserNotExist();
+        getUserOrDefault();
     }
 
     private static void storeUser() {
@@ -32,5 +33,12 @@ public class Main {
         var user = map.get("e99");
         if (user == null)
             System.out.println("User not in map");
+    }
+
+    private static void getUserOrDefault() {
+        var defaultUser = new User("default user", "default email");
+        var user = map.getOrDefault("e99", defaultUser);
+
+        System.out.println(user);
     }
 }
