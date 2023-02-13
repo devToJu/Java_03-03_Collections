@@ -1,8 +1,9 @@
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
+    static Set<String> unsortedUniqueCollection = new HashSet<>();
     public static void main(String[] args) {
-        var list = new GenericList<String>();
-        list.add("a");
-        list.add("b");
-        list.add("c");
+        System.out.println(unsortedUniqueCollection);
     }
 }
