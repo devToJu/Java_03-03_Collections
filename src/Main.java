@@ -5,11 +5,18 @@ import java.util.Set;
 
 public class Main {
     static Set<String> unsortedUniqueCollection = new HashSet<>();
+
+    static Set<String> setA = new HashSet<>(Arrays.asList("a", "b", "c"));
+    static Set<String> setB = new HashSet<>(Arrays.asList("b", "c", "d"));
+
     public static void main(String[] args) {
         System.out.println(unsortedUniqueCollection);
 
         addItems();
         removeDuplicateFromList();
+
+        unionTwoSets();
+        resetSetA();
     }
 
     private static void addItems() {
@@ -26,5 +33,18 @@ public class Main {
         unsortedUniqueCollection.addAll(list);
 
         System.out.println(unsortedUniqueCollection);
+    }
+
+    private static void unionTwoSets() {
+        System.out.println("\n---- UNION: use all elements ----");
+        System.out.println("SetA: " + setA);
+        System.out.println("SetB: " + setB);
+
+        setA.addAll(setB);
+        System.out.println("Union: " + setA);
+    }
+
+    private static void resetSetA() {
+        setA = new HashSet<>(Arrays.asList("a", "b", "c"));
     }
 }
